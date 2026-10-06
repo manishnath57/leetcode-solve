@@ -1,14 +1,26 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        if (x < 0) {
-            return false;
-        }
+        long long y=x;
+long long ans =0;
+if (x<0)
+return false;
+           while(x>0){
 
-        string s = to_string(x);
+            long long  k=x%10;
 
-        reverse(s.begin(), s.end());
+               ans =ans*10+k;
+                 
+                 x=x/10;
 
-        return s == to_string(x);
+           }
+
+           if(ans ==y){
+
+            return true;
+           }
+
+           return false;
     }
+
 };
